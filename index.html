@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nepali Keyboard — Phonetic (Romanized) for Windows</title>
+<meta name="description" content="Type Nepali anywhere on Windows by spelling words the way they sound. Romanized input becomes Devanagari, in any app. Free to use, with an optional one-time Pro." />
+<meta property="og:title" content="Nepali Keyboard — Phonetic (Romanized) for Windows" />
+<meta property="og:description" content="Type Nepali anywhere on Windows by spelling the way it sounds. namaste → नमस्ते." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="logo.png" />
+<style>
+  :root{
+    --bg:#0d0f1f; --bg2:#161732; --card:#1b1d36; --line:#2c2f54;
+    --text:#eef1ff; --muted:#a6abd6; --brand:#e23744; --brand2:#7fb0ff;
+    --good:#34d399; --chip:#262a4d;
+    --maxw:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(900px 500px at 12% -8%, rgba(226,55,68,.28) 0%, transparent 55%),
+      radial-gradient(900px 500px at 92% 0%, rgba(43,111,255,.28) 0%, transparent 55%),
+      var(--bg);
+    color:var(--text); line-height:1.55;
+  }
+  a{color:var(--brand2); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  header{padding:26px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .brand{display:flex; align-items:center; gap:12px; font-weight:700; font-size:18px}
+  .brand img{width:40px; height:40px; border-radius:10px}
+  nav a{color:var(--muted); margin-left:18px; font-size:15px}
+
+  .hero{padding:46px 0 30px; text-align:center}
+  .hero h1{font-size:clamp(30px,5vw,52px); line-height:1.1; margin:.2em 0 .25em; letter-spacing:-.5px}
+  .hero h1 .accent{color:var(--brand2)}
+  .hero p.sub{font-size:clamp(17px,2.4vw,21px); color:var(--muted); max-width:680px; margin:0 auto 26px}
+  .cta{display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#e23744 0%,#2b6fff 100%); color:#fff; font-weight:700;
+       padding:14px 26px; border-radius:12px; font-size:17px; box-shadow:0 10px 30px rgba(43,111,255,.32)}
+  .cta:hover{text-decoration:none; filter:brightness(1.07)}
+  .cta.secondary{background:transparent; color:var(--text); box-shadow:none; border:1px solid var(--line)}
+  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  .tiny{color:var(--muted); font-size:13px; margin-top:12px}
+
+  /* typing demo */
+  .demo{margin:40px auto 0; max-width:620px; background:var(--card); border:1px solid var(--line);
+        border-radius:16px; padding:0; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.35)}
+  .demo .bar{display:flex; gap:7px; padding:12px 14px; border-bottom:1px solid var(--line); background:#15162f}
+  .demo .bar i{width:11px; height:11px; border-radius:50%; display:inline-block}
+  .demo .bar i:nth-child(1){background:#ff5f57}.demo .bar i:nth-child(2){background:#febc2e}.demo .bar i:nth-child(3){background:#28c840}
+  .demo .body{padding:26px 24px; text-align:left}
+  .demo .row{display:flex; align-items:center; gap:14px; margin:10px 0; font-size:20px}
+  .demo .you{color:var(--muted); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .demo .arrow{color:var(--brand2)}
+  .demo .np{font-size:26px; font-weight:600}
+  .demo .cur{display:inline-block; width:2px; height:24px; background:var(--brand2); margin-left:2px; animation:blink 1s steps(1) infinite; vertical-align:middle}
+  @keyframes blink{50%{opacity:0}}
+
+  section{padding:46px 0}
+  h2{font-size:clamp(24px,3.4vw,32px); text-align:center; margin:0 0 8px}
+  .lead{color:var(--muted); text-align:center; max-width:640px; margin:0 auto 30px}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
+  .feat{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px}
+  .feat .ico{font-size:24px}
+  .feat h3{margin:10px 0 6px; font-size:17px}
+  .feat p{margin:0; color:var(--muted); font-size:15px}
+
+  /* free vs pro */
+  table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden}
+  th,td{padding:14px 16px; text-align:left; border-bottom:1px solid var(--line)}
+  th{font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em}
+  td.c,th.c{text-align:center; width:120px}
+  tr:last-child td{border-bottom:none}
+  .yes{color:var(--good); font-weight:700}
+  .note{max-width:680px; margin:18px auto 0; text-align:center; color:var(--muted); font-size:15px}
+
+  .price{max-width:460px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:30px; text-align:center}
+  .price .amt{font-size:46px; font-weight:800}
+  .price .per{color:var(--muted)}
+  .price ul{list-style:none; padding:0; margin:18px 0 22px; text-align:left; display:inline-block}
+  .price li{margin:8px 0}
+  .price li::before{content:"✓ "; color:var(--good); font-weight:700}
+
+  footer{border-top:1px solid var(--line); padding:30px 0 50px; color:var(--muted); font-size:14px; text-align:center}
+  footer a{color:var(--brand2)}
+  .badge{display:inline-block; background:var(--chip); color:var(--brand2); padding:4px 12px; border-radius:999px; font-size:13px; font-weight:600; margin-bottom:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><img src="logo.png" alt="Nepali Keyboard logo" /> Nepali Keyboard</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="badge">For Windows 10 &amp; 11</div>
+    <h1>Type Nepali by spelling it <span class="accent">the way it sounds</span></h1>
+    <p class="sub">A phonetic (Romanized) Nepali keyboard for Windows. Type <b>namaste</b> and get <b>नमस्ते</b> — in any app, with no special layout to memorize.</p>
+    <div class="cta-row">
+      <a class="cta" href="#download">⬇ Download for Windows</a>
+      <a class="cta secondary" href="#pricing">See pricing</a>
+    </div>
+    <div class="tiny">Free to use · Optional one-time Pro · Runs entirely on your PC</div>
+
+    <div class="demo" aria-label="Typing demo">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body">
+        <div class="row"><span class="you">namaste</span> <span class="arrow">→</span> <span class="np">नमस्ते</span></div>
+        <div class="row"><span class="you">dhanyabad</span> <span class="arrow">→</span> <span class="np">धन्यवाद</span></div>
+        <div class="row"><span class="you">nepali</span> <span class="arrow">→</span> <span class="np">नेपाली<span class="cur"></span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Everything you need to write Nepali</h2>
+    <p class="lead">Built to feel natural for anyone who already types in English.</p>
+    <div class="grid">
+      <div class="feat"><div class="ico">⌨️</div><h3>Phonetic Romanized input</h3><p>Spell Nepali words in English letters and they turn into Devanagari automatically.</p></div>
+      <div class="feat"><div class="ico">🪟</div><h3>Works system-wide</h3><p>Types directly into any Windows app — Word, Chrome, Notepad, chat, and email.</p></div>
+      <div class="feat"><div class="ico">💡</div><h3>Smart suggestions</h3><p>A candidate list helps you pick the right word as you type.</p></div>
+      <div class="feat"><div class="ico">🗺️</div><h3>On-screen key chart</h3><p>Forgot a mapping? Open the chart anytime to see how letters transliterate.</p></div>
+      <div class="feat"><div class="ico">🔒</div><h3>Private by design</h3><p>Runs fully on your computer. No keystrokes, usage data, or personal information are sent anywhere.</p></div>
+      <div class="feat"><div class="ico">⚡</div><h3>Light &amp; fast</h3><p>A small native input method that stays out of your way.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Free forever — Pro is optional</h2>
+    <p class="lead">Typing is never locked. The free version stays fully functional. Pro just removes the once-a-day reminder and supports development.</p>
+
+    <table>
+      <tr><th>Feature</th><th class="c">Free</th><th class="c">Pro</th></tr>
+      <tr><td>Phonetic Nepali typing (all of it)</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+      <tr><td>Works in every Windows app</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+      <tr><td>Suggestions &amp; on-screen key chart</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+      <tr><td>Upgrade reminder</td><td class="c">once a day, after 30 days</td><td class="c yes">removed</td></tr>
+      <tr><td>Support an independent developer</td><td class="c">—</td><td class="c yes">✓</td></tr>
+    </table>
+
+    <div style="height:26px"></div>
+
+    <div class="price">
+      <div class="amt">$5</div>
+      <div class="per">one-time · no subscription</div>
+      <ul>
+        <li>Removes the daily reminder</li>
+        <li>License key emailed instantly at checkout</li>
+        <li>Use it on your own PCs</li>
+        <li>Supports ongoing development</li>
+      </ul>
+      <a class="cta" href="#download">Get Nepali Keyboard Pro</a>
+    </div>
+    <p class="note">Note for users in Nepal: foreign card payments can be limited locally, so the free version is meant to stay fully usable without buying anything.</p>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap" style="text-align:center">
+    <h2>Download</h2>
+    <p class="lead">Windows 10 and 11. After installing, switch input method (Win + Space) to start typing Nepali.</p>
+    <div class="cta-row">
+      <a class="cta" href="https://github.com/mechya/nepali-typing-desktop/releases">⬇ Download the latest release</a>
+    </div>
+    <p class="tiny">Open-source friendly · Report issues on <a href="https://github.com/mechya/nepali-typing-desktop/issues">GitHub</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Nepali Keyboard — Phonetic (Romanized) for Windows.<br/>
+    Built by an independent Nepali developer.
+    Questions? <a href="https://github.com/mechya/nepali-typing-desktop/issues">Open an issue</a>.
+  </div>
+</footer>
+</body>
+</html>
