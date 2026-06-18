@@ -26,7 +26,7 @@ You type `namaste` → you get `नमस्ते`. Works in any app — Word, 
 > Typing is **never** locked. The free version stays fully functional forever — Pro just removes the once-a-day reminder and supports development.
 
 ## 💰 Pricing
-**Nepali Keyboard Pro — $5 one-time.** No subscription. You receive a license key by email instantly at checkout.
+**Nepali Keyboard Pro — ¥750 one-time (about US$5).** No subscription. You receive a license key by email instantly at checkout.
 
 ## ⬇️ Download
 **[Get the latest release](https://github.com/mechya/nepali-typing-desktop/releases)** · Windows 10 & 11.
