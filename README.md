@@ -4,7 +4,7 @@
 You type `namaste` → you get `नमस्ते`. Works in any app — Word, Chrome, Notepad, chat, email — as a system-wide input method.
 
 🌐 **Website / download:** https://mechya.github.io/nepali-typing-desktop/
-
+🔗 **Installation video / ** https://youtu.be/EVeZXYwqdI4?si=IZ0TT9Ys_fQYHxgb
 ---
 
 ## ✨ Features
