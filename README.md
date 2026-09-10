@@ -25,8 +25,10 @@ You type `namaste` → you get `नमस्ते`. Works in any app — Word, 
 | Windows 10 & 11 | [Latest release](https://github.com/mechya/nepali-typing-desktop/releases/latest) |
 | Linux (Ubuntu `.deb` / Fedora `.rpm`) | [Latest release](https://github.com/mechya/nepali-typing-desktop/releases/latest) |
 
-## ❤️ Support
-The keyboard is **free** and every feature stays unlocked — no ads, no tracking. If it's useful to you, you can chip in from inside the app. It's a tip, not a price; nothing is ever required to use it fully.
+## ❤️ Free for everyone
+This is a small tool for Nepali speakers, not a product with a paywall. **Everything is free and every feature is unlocked** — no ads, no tracking, no account.
+
+If you want to chip in you can, and that just turns off the once-a-day reminder. Nothing else changes. Foreign card payments can be hard to make inside Nepal, so the keyboard is built to stay completely usable without ever paying — and sharing it with friends helps just as much.
 
 ## 📬 Contact
 Questions or bug reports: open an [issue](https://github.com/mechya/nepali-typing-desktop/issues).
