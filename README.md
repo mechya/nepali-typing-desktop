@@ -30,5 +30,7 @@ This is a small tool for Nepali speakers, not a product with a paywall. **Everyt
 
 If you want to chip in you can, and that just turns off the once-a-day reminder. Nothing else changes. Foreign card payments can be hard to make inside Nepal, so the keyboard is built to stay completely usable without ever paying — and sharing it with friends helps just as much.
 
+Outside the app stores, you can also [☕ buy me a coffee](https://buymeacoffee.com/gurung.bhupesh).
+
 ## 📬 Contact
 Questions or bug reports: open an [issue](https://github.com/mechya/nepali-typing-desktop/issues).
