@@ -3,23 +3,44 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nepali Keyboard — Phonetic (Romanized) for iPhone, Mac, Android, Windows &amp; Linux</title>
-<meta name="description" content="Type Nepali anywhere by spelling words the way they sound. Romanized input becomes Devanagari, in any app — on iPhone, iPad, Mac, Android, Windows and Linux. Free on every platform." />
-<meta property="og:title" content="Nepali Keyboard — Phonetic (Romanized) for iPhone, Mac, Android, Windows &amp; Linux" />
-<meta property="og:description" content="Type Nepali by spelling the way it sounds. namaste → नमस्ते. Free on iPhone, iPad, Mac, Android, Windows and Linux." />
+<title>कुञ्जीपाटी — Nepali Keyboard (Romanized / Phonetic) for iPhone, Mac, Android, Windows &amp; Linux</title>
+<meta name="description" content="Type Nepali anywhere by spelling words the way they sound: namaste → नमस्ते. A free phonetic (Romanized) Nepali keyboard for iPhone, iPad, Mac, Android, Windows and Linux. Try it right here in your browser." />
+<meta name="keywords" content="Nepali keyboard, Romanized Nepali, phonetic Nepali, Nepali typing, Devanagari keyboard, नेपाली किबोर्ड, नेपाली टाइपिङ, कुञ्जीपाटी, Nepali unicode" />
+<link rel="canonical" href="https://mechya.github.io/nepali-typing-desktop/" />
+<meta name="theme-color" content="#0d0f1f" />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://mechya.github.io/nepali-typing-desktop/" />
+<meta property="og:title" content="कुञ्जीपाटी — Type Nepali the way it sounds" />
+<meta property="og:description" content="namaste → नमस्ते. A free phonetic Nepali keyboard for iPhone, iPad, Mac, Android, Windows and Linux." />
+<meta property="og:image" content="https://mechya.github.io/nepali-typing-desktop/logo.png" />
+<meta name="twitter:card" content="summary" />
 <link rel="icon" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "कुञ्जीपाटी — Nepali Keyboard",
+  "alternateName": "Kunjipati Nepali Keyboard",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "iOS, iPadOS, macOS, Android, Windows, Linux",
+  "description": "A phonetic (Romanized) Nepali keyboard: spell words the way they sound and get Devanagari in any app.",
+  "url": "https://mechya.github.io/nepali-typing-desktop/",
+  "image": "https://mechya.github.io/nepali-typing-desktop/logo.png",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
 <style>
   :root{
     --bg:#0d0f1f; --bg2:#161732; --card:#1b1d36; --line:#2c2f54;
     --text:#eef1ff; --muted:#a6abd6; --brand:#e23744; --brand2:#7fb0ff;
     --good:#34d399; --chip:#262a4d;
-    --maxw:980px;
+    --maxw:1000px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans Devanagari",sans-serif;
     background:
       radial-gradient(900px 500px at 12% -8%, rgba(226,55,68,.28) 0%, transparent 55%),
       radial-gradient(900px 500px at 92% 0%, rgba(43,111,255,.28) 0%, transparent 55%),
@@ -28,48 +49,94 @@
   }
   a{color:var(--brand2); text-decoration:none}
   a:hover{text-decoration:underline}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
-  header{padding:26px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
-  .brand{display:flex; align-items:center; gap:12px; font-weight:700; font-size:18px}
-  .brand img{width:40px; height:40px; border-radius:10px}
-  nav a{color:var(--muted); margin-left:18px; font-size:15px}
+  :focus-visible{outline:2px solid var(--brand2); outline-offset:3px; border-radius:6px}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 
-  .hero{padding:46px 0 30px; text-align:center}
-  .hero h1{font-size:clamp(30px,5vw,52px); line-height:1.1; margin:.2em 0 .25em; letter-spacing:-.5px}
+  header{padding:22px 0; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap}
+  .brand{display:flex; align-items:center; gap:12px; font-weight:700; font-size:18px; color:var(--text)}
+  .brand:hover{text-decoration:none}
+  .brand img{width:40px; height:40px; border-radius:10px}
+  .brand small{display:block; font-weight:500; font-size:12px; color:var(--muted)}
+  nav{display:flex; gap:18px; flex-wrap:wrap}
+  nav a{color:var(--muted); font-size:15px}
+
+  .hero{padding:40px 0 20px; text-align:center}
+  .hero h1{font-size:clamp(30px,5vw,54px); line-height:1.1; margin:.2em 0 .25em; letter-spacing:-.5px}
   .hero h1 .accent{color:var(--brand2)}
   .hero p.sub{font-size:clamp(17px,2.4vw,21px); color:var(--muted); max-width:680px; margin:0 auto 26px}
-  .cta{display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#e23744 0%,#2b6fff 100%); color:#fff; font-weight:700;
-       padding:14px 26px; border-radius:12px; font-size:17px; box-shadow:0 10px 30px rgba(43,111,255,.32)}
+  .badge{display:inline-block; background:var(--chip); color:var(--brand2); padding:4px 12px; border-radius:999px; font-size:13px; font-weight:600; margin-bottom:14px}
+
+  .cta{display:inline-flex; align-items:center; justify-content:center; gap:10px; background:linear-gradient(135deg,#e23744 0%,#2b6fff 100%); color:#fff; font-weight:700;
+       padding:14px 26px; border-radius:12px; font-size:17px; box-shadow:0 10px 30px rgba(43,111,255,.32); border:0; cursor:pointer; font-family:inherit}
   .cta:hover{text-decoration:none; filter:brightness(1.07)}
   .cta.secondary{background:transparent; color:var(--text); box-shadow:none; border:1px solid var(--line)}
+  .cta.small{padding:10px 18px; font-size:15px}
   .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
   .tiny{color:var(--muted); font-size:13px; margin-top:12px}
 
-  /* typing demo */
-  .demo{margin:40px auto 0; max-width:620px; background:var(--card); border:1px solid var(--line);
-        border-radius:16px; padding:0; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.35)}
-  .demo .bar{display:flex; gap:7px; padding:12px 14px; border-bottom:1px solid var(--line); background:#15162f}
-  .demo .bar i{width:11px; height:11px; border-radius:50%; display:inline-block}
-  .demo .bar i:nth-child(1){background:#ff5f57}.demo .bar i:nth-child(2){background:#febc2e}.demo .bar i:nth-child(3){background:#28c840}
-  .demo .body{padding:26px 24px; text-align:left}
-  .demo .row{display:flex; align-items:center; gap:14px; margin:10px 0; font-size:20px}
-  .you{color:var(--muted); font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  .demo .arrow{color:var(--brand2)}
-  .demo .np{font-size:26px; font-weight:600}
-  .demo .cur{display:inline-block; width:2px; height:24px; background:var(--brand2); margin-left:2px; animation:blink 1s steps(1) infinite; vertical-align:middle}
-  @keyframes blink{50%{opacity:0}}
+  /* try it */
+  .try{margin:36px auto 0; max-width:760px; background:var(--card); border:1px solid var(--line);
+       border-radius:16px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.35); text-align:left}
+  .try .bar{display:flex; align-items:center; gap:7px; padding:12px 14px; border-bottom:1px solid var(--line); background:#15162f}
+  .try .bar i{width:11px; height:11px; border-radius:50%; display:inline-block}
+  .try .bar i:nth-child(1){background:#ff5f57}.try .bar i:nth-child(2){background:#febc2e}.try .bar i:nth-child(3){background:#28c840}
+  .try .bar span{margin-left:10px; color:var(--muted); font-size:13px}
+  .panes{display:grid; grid-template-columns:1fr 1fr}
+  .pane{padding:18px 20px}
+  .pane + .pane{border-left:1px solid var(--line)}
+  .pane label{display:block; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:8px}
+  #roman{width:100%; min-height:120px; resize:vertical; background:transparent; border:0; color:var(--text);
+         font:18px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; outline:none; padding:0}
+  #roman::placeholder{color:#5d6292}
+  #nepali{min-height:120px; font-size:26px; line-height:1.5; font-weight:600; white-space:pre-wrap; word-break:break-word}
+  #nepali:empty::before{content:"नेपाली यहाँ देखिन्छ"; color:#5d6292; font-weight:400}
+  .try .foot{display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:12px 16px; border-top:1px solid var(--line); background:#17183a}
+  .chip{background:var(--chip); color:var(--text); border:1px solid var(--line); border-radius:999px; padding:5px 12px; font:14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; cursor:pointer}
+  .chip:hover{border-color:var(--brand2)}
+  .try .foot .spacer{flex:1}
+  #copy{padding:7px 14px; font-size:14px; border-radius:9px}
 
-  section{padding:46px 0}
+  section{padding:50px 0}
   h2{font-size:clamp(24px,3.4vw,32px); text-align:center; margin:0 0 8px}
   .lead{color:var(--muted); text-align:center; max-width:640px; margin:0 auto 30px}
 
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(205px,1fr)); gap:16px}
   .feat{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px}
   .feat .ico{font-size:24px}
   .feat h3{margin:10px 0 6px; font-size:17px}
   .feat p{margin:0; color:var(--muted); font-size:15px}
 
-  .support{max-width:520px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:30px; text-align:center}
+  /* cheat sheet */
+  .sheet{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px}
+  .rule{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px}
+  .rule h3{margin:0 0 4px; font-size:16px}
+  .rule p{margin:0 0 12px; color:var(--muted); font-size:14px}
+  .pairs{display:flex; flex-wrap:wrap; gap:8px}
+  .pair{display:inline-flex; align-items:baseline; gap:8px; background:var(--chip); border-radius:10px; padding:6px 10px}
+  .pair .r{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--muted); font-size:14px}
+  .pair .d{font-size:20px; font-weight:600}
+
+  /* downloads */
+  .dl{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; text-align:left}
+  .dl .feat{display:flex; flex-direction:column; position:relative}
+  .dl .feat.mine{border-color:var(--brand2); box-shadow:0 0 0 1px var(--brand2), 0 14px 40px rgba(43,111,255,.22)}
+  .dl .feat.mine::after{content:"Your device"; position:absolute; top:14px; right:14px; font-size:12px; font-weight:700; color:var(--brand2); background:var(--chip); padding:3px 10px; border-radius:999px}
+  .dl ol{margin:10px 0 0; padding-left:20px; color:var(--muted); font-size:15px}
+  .dl ol li{margin:4px 0}
+  .dl .btns{margin-top:auto; padding-top:16px; display:flex; gap:10px; flex-wrap:wrap}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; background:var(--chip); padding:2px 6px; border-radius:6px; color:var(--text)}
+
+  /* faq */
+  .faq{max-width:760px; margin:0 auto}
+  details{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:0 18px; margin:10px 0}
+  summary{cursor:pointer; padding:16px 0; font-weight:600; list-style:none; display:flex; justify-content:space-between; gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; color:var(--brand2); font-size:20px; line-height:1}
+  details[open] summary::after{content:"−"}
+  details p{margin:0 0 16px; color:var(--muted)}
+
+  .support{max-width:540px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:30px; text-align:center}
   .support .amt{font-size:34px; font-weight:800}
   .support .per{color:var(--muted)}
   .support ul{list-style:none; padding:0; margin:18px 0 22px; text-align:left; display:inline-block}
@@ -79,17 +146,25 @@
 
   footer{border-top:1px solid var(--line); padding:30px 0 50px; color:var(--muted); font-size:14px; text-align:center}
   footer a{color:var(--brand2)}
-  .badge{display:inline-block; background:var(--chip); color:var(--brand2); padding:4px 12px; border-radius:999px; font-size:13px; font-weight:600; margin-bottom:14px}
+
+  @media (max-width:640px){
+    .panes{grid-template-columns:1fr}
+    .pane + .pane{border-left:0; border-top:1px solid var(--line)}
+    #roman,#nepali{min-height:80px}
+    nav{gap:14px}
+  }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><img src="logo.png" alt="Nepali Keyboard logo" /> Nepali Keyboard</div>
+    <a class="brand" href="#"><img src="logo.png" alt="" /> <span>कुञ्जीपाटी<small>Nepali Keyboard</small></span></a>
     <nav>
-      <a href="#features">Features</a>
+      <a href="#try">Try it</a>
+      <a href="#how">How to type</a>
       <a href="#download">Download</a>
-      <a href="#support">Support</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
@@ -98,19 +173,34 @@
     <h1>Type Nepali by spelling it <span class="accent">the way it sounds</span></h1>
     <p class="sub">A phonetic (Romanized) Nepali keyboard for every device you use. Type <b>namaste</b> and get <b>नमस्ते</b> — in any app, with no special layout to memorize.</p>
     <div class="cta-row">
-      <a class="cta" href="#download">⬇ Get it free</a>
-      <a class="cta secondary" href="#features">See features</a>
+      <a class="cta" id="heroDownload" href="#download">⬇ Get it free</a>
+      <a class="cta secondary" href="#try">Try it here</a>
     </div>
-    <div class="tiny">Free on every platform · No ads · Runs entirely on your device</div>
+    <div class="tiny" id="heroOther">Free on every platform · No ads · Runs entirely on your device</div>
 
-    <div class="demo" aria-label="Typing demo">
-      <div class="bar"><i></i><i></i><i></i></div>
-      <div class="body">
-        <div class="row"><span class="you">namaste</span> <span class="arrow">→</span> <span class="np">नमस्ते</span></div>
-        <div class="row"><span class="you">dhanyabad</span> <span class="arrow">→</span> <span class="np">धन्यवाद</span></div>
-        <div class="row"><span class="you">nepali</span> <span class="arrow">→</span> <span class="np">नेपाली<span class="cur"></span></span></div>
+    <div class="try" id="try">
+      <div class="bar"><i></i><i></i><i></i><span>Try it — type Romanized Nepali below</span></div>
+      <div class="panes">
+        <div class="pane">
+          <label for="roman">You type</label>
+          <textarea id="roman" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="ma nepaalii huC."></textarea>
+        </div>
+        <div class="pane">
+          <label>You get</label>
+          <div id="nepali" aria-live="polite" lang="ne"></div>
+        </div>
+      </div>
+      <div class="foot">
+        <button class="chip" type="button" data-say="namaste">namaste</button>
+        <button class="chip" type="button" data-say="dhanyavaad">dhanyavaad</button>
+        <button class="chip" type="button" data-say="ma nepaalii huC.">ma nepaalii huC.</button>
+        <button class="chip" type="button" data-say="kaaThmaaDauq">kaaThmaaDauq</button>
+        <button class="chip" type="button" data-say="2025">2025</button>
+        <span class="spacer"></span>
+        <button class="cta small secondary" id="copy" type="button">Copy Nepali</button>
       </div>
     </div>
+    <p class="tiny">This box uses the same rules as the keyboard. The real keyboard also suggests whole words as you type.</p>
   </div>
 </div>
 
@@ -121,64 +211,185 @@
     <div class="grid">
       <div class="feat"><div class="ico">⌨️</div><h3>Phonetic Romanized input</h3><p>Spell Nepali words in English letters and they turn into Devanagari automatically.</p></div>
       <div class="feat"><div class="ico">📲</div><h3>Works system-wide</h3><p>Types directly into any app — messages, browser, documents, chat, and email.</p></div>
-      <div class="feat"><div class="ico">💡</div><h3>Smart suggestions</h3><p>A candidate list helps you pick the right word as you type.</p></div>
-      <div class="feat"><div class="ico">🗺️</div><h3>On-screen key chart</h3><p>Forgot a mapping? Open the chart anytime to see how letters transliterate.</p></div>
+      <div class="feat"><div class="ico">💡</div><h3>Smart suggestions</h3><p>A word list helps you pick the right spelling as you type, and learns the words you use most.</p></div>
+      <div class="feat"><div class="ico">🔢</div><h3>Nepali numbers</h3><p>Type ० १ २ ३ … ९. On Mac the number keys type Nepali digits directly: 2025 → २०२५.</p></div>
+      <div class="feat"><div class="ico">🗺️</div><h3>Built-in key chart</h3><p>Forgot a mapping? Open the chart anytime to see how every letter, matra and conjunct is typed.</p></div>
       <div class="feat"><div class="ico">😀</div><h3>Emoji &amp; stickers</h3><p>Emoji show up beside matching Nepali words, with animated emoji and sticker palettes in the chart.</p></div>
       <div class="feat"><div class="ico">🔒</div><h3>Private by design</h3><p>Runs fully on your device. No keystrokes, usage data, or personal information are sent anywhere.</p></div>
-      <div class="feat"><div class="ico">⚡</div><h3>Light &amp; fast</h3><p>A small native input method that stays out of your way.</p></div>
       <div class="feat"><div class="ico">🎁</div><h3>Free, all of it</h3><p>Every feature is unlocked for everyone. No ads, no account, nothing held back for a paid tier.</p></div>
     </div>
   </div>
 </section>
 
+<section id="how">
+  <div class="wrap">
+    <h2>How to type — the whole scheme on one page</h2>
+    <p class="lead">A few simple rules cover almost everything. Type any of these in the box above to see them work.</p>
+    <div class="sheet">
+      <div class="rule">
+        <h3>Capital letter = hard (retroflex) sound</h3>
+        <p>Lowercase is the soft dental sound, Capital is the hard one.</p>
+        <div class="pairs">
+          <span class="pair"><span class="r">t</span><span class="d">त</span></span><span class="pair"><span class="r">T</span><span class="d">ट</span></span>
+          <span class="pair"><span class="r">th</span><span class="d">थ</span></span><span class="pair"><span class="r">Th</span><span class="d">ठ</span></span>
+          <span class="pair"><span class="r">d</span><span class="d">द</span></span><span class="pair"><span class="r">D</span><span class="d">ड</span></span>
+          <span class="pair"><span class="r">n</span><span class="d">न</span></span><span class="pair"><span class="r">N</span><span class="d">ण</span></span>
+        </div>
+      </div>
+      <div class="rule">
+        <h3>Double the vowel to make it long</h3>
+        <p>One letter is the short vowel, two letters the long one.</p>
+        <div class="pairs">
+          <span class="pair"><span class="r">ka</span><span class="d">क</span></span><span class="pair"><span class="r">kaa</span><span class="d">का</span></span>
+          <span class="pair"><span class="r">ki</span><span class="d">कि</span></span><span class="pair"><span class="r">kii</span><span class="d">की</span></span>
+          <span class="pair"><span class="r">ku</span><span class="d">कु</span></span><span class="pair"><span class="r">kuu</span><span class="d">कू</span></span>
+          <span class="pair"><span class="r">kai</span><span class="d">कै</span></span><span class="pair"><span class="r">kau</span><span class="d">कौ</span></span>
+        </div>
+      </div>
+      <div class="rule">
+        <h3>Three kinds of “s”</h3>
+        <p>Add capitals for the other two sibilants.</p>
+        <div class="pairs">
+          <span class="pair"><span class="r">sa</span><span class="d">स</span></span>
+          <span class="pair"><span class="r">Sa</span><span class="d">श</span></span>
+          <span class="pair"><span class="r">SA</span><span class="d">ष</span></span>
+        </div>
+      </div>
+      <div class="rule">
+        <h3>Conjuncts join by themselves</h3>
+        <p>Just type the consonants next to each other.</p>
+        <div class="pairs">
+          <span class="pair"><span class="r">namaste</span><span class="d">नमस्ते</span></span>
+          <span class="pair"><span class="r">raamro</span><span class="d">राम्रो</span></span>
+          <span class="pair"><span class="r">dhanyavaad</span><span class="d">धन्यवाद</span></span>
+        </div>
+      </div>
+      <div class="rule">
+        <h3>Special letters</h3>
+        <p>Shortcuts for the letters that aren't simple sounds.</p>
+        <div class="pairs">
+          <span class="pair"><span class="r">Gyaan</span><span class="d">ज्ञान</span></span>
+          <span class="pair"><span class="r">Xetra</span><span class="d">क्षेत्र</span></span>
+          <span class="pair"><span class="r">kRShi</span><span class="d">कृषि</span></span>
+          <span class="pair"><span class="r">xa</span><span class="d">छ</span></span>
+          <span class="pair"><span class="r">om</span><span class="d">ॐ</span></span>
+        </div>
+      </div>
+      <div class="rule">
+        <h3>Nasals, signs &amp; numbers</h3>
+        <p><b>q</b> → ं · <b>C</b> → ँ · full stop → ।</p>
+        <div class="pairs">
+          <span class="pair"><span class="r">saqsaar</span><span class="d">संसार</span></span>
+          <span class="pair"><span class="r">gaauC</span><span class="d">गाउँ</span></span>
+          <span class="pair"><span class="r">.</span><span class="d">।</span></span>
+          <span class="pair"><span class="r">2025</span><span class="d">२०२५</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="download">
-  <div class="wrap" style="text-align:center">
+  <div class="wrap">
     <h2>Download — free everywhere</h2>
     <p class="lead">Pick your device, install, then switch input method to start typing Nepali.</p>
 
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-      <div class="feat">
+    <div class="dl">
+      <div class="feat" data-os="ios">
         <div class="ico">📱</div>
-        <h3>iPhone, iPad &amp; Mac</h3>
-        <p>Add the Nepali keyboard in <b>Settings → General → Keyboard</b>, then tap 🌐 to switch.</p>
-        <p>On Mac, install the free keyboard, log out and back in, then add it in <b>System Settings → Keyboard → Input Sources</b>.</p>
-        <div style="margin-top:16px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap">
-          <a class="cta" href="https://apps.apple.com/us/app/id6778465678">Download on the App Store</a>
-          <a class="cta secondary" href="https://github.com/mechya/nepali-typing-desktop/releases/download/mac-v1.1.2/NepaliKeyboard-1.1.2.pkg">⬇ Mac keyboard</a>
+        <h3>iPhone &amp; iPad</h3>
+        <ol>
+          <li>Install from the App Store.</li>
+          <li><b>Settings → General → Keyboard → Keyboards → Add New Keyboard</b> → कुञ्जीपाटी.</li>
+          <li>Tap 🌐 on the keyboard to switch.</li>
+        </ol>
+        <div class="btns"><a class="cta small" href="https://apps.apple.com/us/app/id6778465678">Download on the App Store</a></div>
+      </div>
+
+      <div class="feat" data-os="mac">
+        <div class="ico">💻</div>
+        <h3>Mac</h3>
+        <ol>
+          <li>Download and open the installer — macOS asks for your password.</li>
+          <li><b>Log out and back in</b> when asked (macOS only finds new keyboards at login).</li>
+          <li><b>System Settings → Keyboard → Input Sources → Edit… → +</b> → Nepali → कुञ्जीपाटी.</li>
+        </ol>
+        <div class="btns">
+          <a class="cta small" href="https://github.com/mechya/nepali-typing-desktop/releases/download/mac-v1.1.2/NepaliKeyboard-1.1.2.pkg">⬇ Mac keyboard</a>
+          <a class="cta small secondary" href="https://apps.apple.com/us/app/id6778465678">Companion app</a>
         </div>
       </div>
-      <div class="feat">
+
+      <div class="feat" data-os="android">
         <div class="ico">🤖</div>
         <h3>Android</h3>
-        <p>Install, enable the keyboard in <b>Settings → Language &amp; input</b>, then switch with the 🌐 key.</p>
-        <div style="margin-top:16px">
-          <a class="cta" href="https://play.google.com/store/apps/details?id=com.bhupesh.nepalikeyboard">Get it on Google Play</a>
-        </div>
+        <ol>
+          <li>Install from Google Play.</li>
+          <li>Enable it in <b>Settings → System → Keyboard</b> (or <b>Language &amp; input</b>).</li>
+          <li>Switch with the 🌐 key.</li>
+        </ol>
+        <div class="btns"><a class="cta small" href="https://play.google.com/store/apps/details?id=com.bhupesh.nepalikeyboard">Get it on Google Play</a></div>
       </div>
-      <div class="feat">
+
+      <div class="feat" data-os="windows">
         <div class="ico">🪟</div>
         <h3>Windows 10 &amp; 11</h3>
-        <p>Run the installer, then switch with <b>Win + Space</b>.</p>
-        <div style="margin-top:16px">
-          <a class="cta" href="https://github.com/mechya/nepali-typing-desktop/releases/latest">⬇ Windows installer</a>
-        </div>
+        <ol>
+          <li>Download the installer (<b>.exe</b>) from the latest release and run it.</li>
+          <li>Switch with <b>Win + Space</b>.</li>
+        </ol>
+        <div class="btns"><a class="cta small" href="https://github.com/mechya/nepali-typing-desktop/releases/latest">⬇ Windows installer</a></div>
       </div>
-      <div class="feat">
+
+      <div class="feat" data-os="linux">
         <div class="ico">🐧</div>
         <h3>Linux — Ubuntu &amp; Fedora</h3>
-        <p>An IBus input method. Enable in <b>Settings → Keyboard → Input Sources</b>, switch with <b>Super + Space</b>.</p>
-        <div style="margin-top:16px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap">
-          <a class="cta" href="https://github.com/mechya/nepali-typing-desktop/releases/latest">⬇ .deb · Ubuntu</a>
-          <a class="cta secondary" href="https://github.com/mechya/nepali-typing-desktop/releases/latest">⬇ .rpm · Fedora</a>
+        <ol>
+          <li>Install: <code>sudo apt install ./ibus-nepali_*.deb</code> or <code>sudo dnf install ./ibus-nepali-*.rpm</code></li>
+          <li>Run <code>ibus restart</code>, then add it in <b>Settings → Keyboard → Input Sources</b>.</li>
+          <li>Switch with <b>Super + Space</b>.</li>
+        </ol>
+        <div class="btns">
+          <a class="cta small" href="https://github.com/mechya/nepali-typing-desktop/releases/latest">⬇ .deb · Ubuntu</a>
+          <a class="cta small secondary" href="https://github.com/mechya/nepali-typing-desktop/releases/latest">⬇ .rpm · Fedora</a>
         </div>
       </div>
     </div>
 
-    <p class="tiny" style="margin-top:20px">
-      Install on Linux: <span class="you">sudo apt install ./ibus-nepali_*.deb</span> &nbsp;·&nbsp;
-      <span class="you">sudo dnf install ./ibus-nepali-*.rpm</span> &nbsp;·&nbsp; then <span class="you">ibus restart</span>
-    </p>
-    <p class="tiny">Open-source friendly · Report issues on <a href="https://github.com/mechya/nepali-typing-desktop/issues">GitHub</a></p>
+    <p class="tiny" style="text-align:center">Something not working? <a href="https://github.com/mechya/nepali-typing-desktop/issues">Report it on GitHub</a>.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <p class="lead">The things people ask most.</p>
+    <div class="faq">
+      <details>
+        <summary>Is it really free?</summary>
+        <p>Yes. Every feature works for everyone, on every platform, with no ads and no account. An optional one-time purchase only turns off a once-a-day reminder.</p>
+      </details>
+      <details>
+        <summary>Does it send what I type anywhere?</summary>
+        <p>No. Everything — the conversion and the word suggestions — runs on your device. Nothing you type leaves it.</p>
+      </details>
+      <details>
+        <summary>I installed it on my Mac but can't find it.</summary>
+        <p>Log out and log back in first — macOS only looks for new keyboards at login. Then go to System Settings → Keyboard → Input Sources → Edit… → + and choose Nepali → कुञ्जीपाटी.</p>
+      </details>
+      <details>
+        <summary>Why isn't the Mac keyboard in the Mac App Store?</summary>
+        <p>macOS only loads keyboards from a system folder that App Store apps aren't allowed to write to. So the keyboard is a separate free download, signed and notarized by Apple. The App Store app is an optional companion.</p>
+      </details>
+      <details>
+        <summary>How do I type ज्ञ, क्ष, ऋ or ँ?</summary>
+        <p><b>Gy</b> → ज्ञ, <b>X</b> → क्ष, <b>R</b> → ऋ (after a consonant: <b>kR</b> → कृ), <b>C</b> → ँ, <b>q</b> → ं. See <a href="#how">How to type</a> — and the key chart inside the app has everything.</p>
+      </details>
+      <details>
+        <summary>Does it work in Word, Facebook, WhatsApp…?</summary>
+        <p>Yes. It's a real system keyboard, so it types standard Unicode Nepali into any app or website.</p>
+      </details>
+    </div>
   </div>
 </section>
 
@@ -207,11 +418,56 @@
 
 <footer>
   <div class="wrap">
-    Nepali Keyboard — Phonetic (Romanized) for iPhone, iPad, Mac, Android, Windows &amp; Linux.<br/>
+    कुञ्जीपाटी — Nepali Keyboard, Phonetic (Romanized) for iPhone, iPad, Mac, Android, Windows &amp; Linux.<br/>
     Built by an independent Nepali developer.
     Questions? <a href="https://github.com/mechya/nepali-typing-desktop/issues">Open an issue</a>.
     Enjoying it? <a href="https://buymeacoffee.com/gurung.bhupesh" target="_blank" rel="noopener">☕ Buy me a coffee</a>.
   </div>
 </footer>
+
+<script src="translit.js"></script>
+<script>
+(function () {
+  // Live "Try it" box.
+  var roman = document.getElementById("roman");
+  var nepali = document.getElementById("nepali");
+  function render() { nepali.textContent = NepaliTranslit.transliterate(roman.value, true); }
+  roman.addEventListener("input", render);
+  document.querySelectorAll("[data-say]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      roman.value = b.getAttribute("data-say");
+      render();
+      roman.focus();
+    });
+  });
+  var copy = document.getElementById("copy");
+  copy.addEventListener("click", function () {
+    if (!nepali.textContent || !navigator.clipboard) return;
+    navigator.clipboard.writeText(nepali.textContent).then(function () {
+      copy.textContent = "Copied ✓";
+      setTimeout(function () { copy.textContent = "Copy Nepali"; }, 1500);
+    });
+  });
+
+  // Point the hero button at the visitor's own platform and highlight its card.
+  var ua = navigator.userAgent, os = null;
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) os = "ios";
+  else if (/Android/.test(ua)) os = "android";
+  else if (/Macintosh|Mac OS X/.test(ua)) os = "mac";
+  else if (/Windows/.test(ua)) os = "windows";
+  else if (/Linux|X11/.test(ua)) os = "linux";
+  var labels = { ios: "iPhone & iPad", android: "Android", mac: "Mac", windows: "Windows", linux: "Linux" };
+  var card = os && document.querySelector('.dl [data-os="' + os + '"]');
+  if (card) {
+    card.classList.add("mine");
+    var link = card.querySelector(".btns a");
+    var hero = document.getElementById("heroDownload");
+    hero.textContent = "⬇ Download for " + labels[os];
+    hero.href = os === "linux" ? "#download" : link.href;
+    document.getElementById("heroOther").innerHTML =
+      'Free · No ads · Runs on your device · <a href="#download">Other platforms</a>';
+  }
+})();
+</script>
 </body>
 </html>
