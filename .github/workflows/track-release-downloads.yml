@@ -1,0 +1,102 @@
+# Processing overview:
+# - Runs automatically once per day.
+# - Reads download counts for every GitHub Release asset.
+# - Saves a daily snapshot to stats/release-downloads.csv.
+# - Commits the updated CSV back to the repository.
+#
+# Existing project files are not modified by this workflow.
+
+name: Track Release Downloads
+
+on:
+  # 15:10 UTC = 00:10 JST
+  schedule:
+    - cron: "10 15 * * *"
+
+  # Allows running the tracker manually from the Actions page.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  track-downloads:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Collect release download counts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          # Processing overview:
+          # Fetch all GitHub Releases and their assets,
+          # then save today's cumulative download counts.
+
+          mkdir -p stats
+
+          FILE="stats/release-downloads.csv"
+          TODAY="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
+
+          if [ ! -f "$FILE" ]; then
+            echo "date,release,asset,downloads" > "$FILE"
+          fi
+
+          # Remove today's records when manually rerunning the workflow.
+          # This prevents duplicate rows for the same day.
+          awk -F',' -v today="$TODAY" \
+            'NR == 1 || $1 != today' \
+            "$FILE" > "${FILE}.tmp"
+
+          mv "${FILE}.tmp" "$FILE"
+
+          PAGE=1
+
+          while true; do
+            RESPONSE="$(curl --fail --silent \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/${REPOSITORY}/releases?per_page=100&page=${PAGE}")"
+
+            RELEASE_COUNT="$(echo "$RESPONSE" | jq 'length')"
+
+            if [ "$RELEASE_COUNT" -eq 0 ]; then
+              break
+            fi
+
+            echo "$RESPONSE" |
+              jq -r --arg date "$TODAY" '
+                .[] as $release |
+                $release.assets[] |
+                [
+                  $date,
+                  $release.tag_name,
+                  .name,
+                  (.download_count | tostring)
+                ] |
+                @csv
+              ' >> "$FILE"
+
+            PAGE=$((PAGE + 1))
+          done
+
+      - name: Commit download history
+        run: |
+          # Processing overview:
+          # Commit only when today's download statistics changed.
+
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add stats/release-downloads.csv
+          git commit -m "chore: update release download statistics"
+          git push
