@@ -48,7 +48,7 @@ jobs:
           # Remove today's records when manually rerunning the workflow.
           # This prevents duplicate rows for the same day.
           awk -F',' -v today="$TODAY" \
-            'NR == 1 || $1 != today' \
+            'NR == 1 || ($1 != today && $1 != "\"" today "\"")' \
             "$FILE" > "${FILE}.tmp"
 
           mv "${FILE}.tmp" "$FILE"
@@ -89,7 +89,9 @@ jobs:
           # Processing overview:
           # Commit only when today's download statistics changed.
 
-          if git diff --quiet; then
+          # git status (unlike git diff) also sees the CSV on its first run,
+          # before it is tracked.
+          if [ -z "$(git status --porcelain stats/)" ]; then
             echo "No changes to commit."
             exit 0
           fi
