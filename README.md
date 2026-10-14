@@ -23,7 +23,7 @@ You type `namaste` → you get `नमस्ते`. Works in any app — Word, 
 | iPhone, iPad & Mac | [App Store](https://apps.apple.com/us/app/id6778465678) |
 | Android | [Google Play](https://play.google.com/store/apps/details?id=com.bhupesh.nepalikeyboard) |
 | Windows 10 & 11 | [Latest release](https://github.com/mechya/nepali-typing-desktop/releases/latest) |
-| Linux (Ubuntu `.deb` / Fedora `.rpm`) | [Latest release](https://github.com/mechya/nepali-typing-desktop/releases/latest) |
+| Linux (Ubuntu `.deb` / Fedora `.rpm`) | [v1.0.1 release](https://github.com/mechya/nepali-typing-desktop/releases/tag/v1.0.1) |
 
 ## ❤️ Free for everyone
 This is a small tool for Nepali speakers, not a product with a paywall. **Everything is free and every feature is unlocked** — no ads, no tracking, no account.
